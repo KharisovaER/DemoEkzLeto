@@ -1,0 +1,40 @@
+﻿<Window x:Class="DemoEkzLeto.Seller"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoEkzLeto"
+        mc:Ignorable="d"
+        Title="Seller" Height="450" Width="800" WindowState="Maximized">
+    <Grid>
+        <TextBlock Style="{StaticResource Back}" MouseDown="TextBlock_MouseDown">Назад</TextBlock>
+        <StackPanel>
+            <TextBlock Style="{StaticResource TitleStyle}" HorizontalAlignment="Center">Заказы</TextBlock>
+            <DataGrid x:Name="OrdersGrid">
+                    <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Order_code}" Header="Код заказа" Width="*"/>
+                    <DataGridTextColumn Binding="{Binding Create_date}" Header="Дата открытия" Width="*"/>
+                    <DataGridTextColumn Binding="{Binding Order_time}" Header="Время открытия" Width="*"/>
+                    <DataGridTextColumn Binding="{Binding Client_code}" Header="Код клиента" Width="*"/>
+                    <DataGridTextColumn Binding="{Binding Status}" Header="Статус заказа" Width="*"/>
+                    <DataGridTextColumn Binding="{Binding Close_date}" Header="Дата закрытия" Width="*"/>
+                    <DataGridTextColumn Binding="{Binding Rental_time}" Header="Время проката" Width="*"/>
+                    <DataGridTemplateColumn Header="Штрих-код" Width="*" IsReadOnly="False">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="QRBtn" Click="QRBtn_Click" Content="Штрих-код"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Поменять статус" Width="*" IsReadOnly="False">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="StatusBtn" Click="StatusBtn_Click" Content="Статус"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>

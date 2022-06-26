@@ -1,0 +1,21 @@
+﻿<Window x:Class="DemoEkzLeto.OrderStatusChange"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoEkzLeto"
+        mc:Ignorable="d"
+        Title="OrderStatusChange" Height="450" Width="800">
+    <Grid>
+        <TextBlock Style="{StaticResource Back}" MouseDown="TextBlock_MouseDown" Text="Назад"/>
+        <StackPanel Margin="10,0,0,0">
+            <TextBlock Style="{StaticResource TitleStyle}">Смена статуса заказа</TextBlock>
+            <TextBlock x:Name="OrderStatus" FontSize="20">Статус заказа: </TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Введите новый статус (В прокате или Закрыта)" FontSize="20"/>
+                <TextBox x:Name="OrderStTB" Width="200" Height="30" Margin="10,0,0,0" FontSize="20"/>
+            </StackPanel>
+            <Button x:Name="Apply" Click="Apply_Click" Content="Принять" Width="100" HorizontalAlignment="Left" Margin="0,5,0,0" FontSize="20" IsEnabled="False"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="DemoEkzLeto.QrCode"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoEkzLeto"
+        mc:Ignorable="d"
+        Title="Штри-код" Height="450" Width="800">
+    <Grid>
+        <TextBlock Text="Назад" Style="{StaticResource Back}" MouseDown="TextBlock_MouseDown"/>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Style="{StaticResource TitleStyle}" Text="Штрих-код"/>
+            <TextBlock FontSize="20" Text="Код заказа: " x:Name="OrderCode"/>
+            <!--<TextBox Name="txtbox" Text="0123456789" Width="600" FontSize="15" Foreground="Green" Margin="5" Padding="5"/>-->
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Image Name="imageQR" Width="256" Height="256" Margin="5"/>
+                <Image Name="imageBar" Width="350" Height="256" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

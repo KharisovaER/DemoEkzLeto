@@ -1,0 +1,23 @@
+﻿<Window x:Class="DemoEkzLeto.Admin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoEkzLeto"
+        mc:Ignorable="d"
+        Title="Admin" Height="450" Width="800" WindowState="Maximized">
+    <Grid>
+        <TextBlock Text="Назад" MouseDown="TextBlock_MouseDown" Style="{StaticResource Back}"/>
+        <StackPanel>
+            <TextBlock Style="{StaticResource TitleStyle}" HorizontalAlignment="Center">История входа рабочего персонала</TextBlock>
+            <DataGrid x:Name="StaffGrid" AutoGenerateColumns="False" Width="1550" FontSize="20">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Post}" Header="Должность" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding Login}" Header="Логин" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding Last_entry}" Header="Последнее посещение" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding Entry_type}" Header="Тип захода" Width="auto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>

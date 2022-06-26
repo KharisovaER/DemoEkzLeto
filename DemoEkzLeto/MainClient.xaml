@@ -1,0 +1,30 @@
+﻿<Window x:Class="DemoEkzLeto.MainClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoEkzLeto"
+        mc:Ignorable="d"
+        Title="MainClient" Height="450" Width="800" WindowState="Maximized">
+    <Grid>
+        <TextBlock Style="{StaticResource Back}" Text="Назад" MouseDown="TextBlock_MouseDown"/>
+        <StackPanel>
+            <TextBlock Style="{StaticResource TitleStyle}" Text="Список услуг"/>
+            <DataGrid x:Name="Goods" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" MaxHeight="700">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Услуга" Binding="{Binding Service_name}" Width="*"/>
+                    <DataGridTextColumn Header="Код услуги" Binding="{Binding Service_code}" Width="*"/>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding Cost}" Width="*"/>
+                    <DataGridTemplateColumn Width="*" Header="Забронировать" IsReadOnly="False">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="BronBtn" Content="Забронировать" Click="BronBtn_Click"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Content="Перейти к списку забронированных" Height="40" FontSize="20" x:Name="ReserveBTN" Click="ReserveBTN_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
